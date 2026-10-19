@@ -1,61 +1,48 @@
 // Formato de fila: nombre|precio|días hábiles|detalle  (campos vacíos permitidos)
 const D=[
-{id:'acrilicos',t:'Acrílicos',g:[{t:'Prótesis Total / Parcial',r:`Prótesis Convencional - Dientes Biodent|$300.000|3 - 4
-Prótesis Altoimpacto - Dientes Ivostar - Isosit - Duratone|$410.000|3 - 4
-Prótesis Flexible|$370.000|3 - 4
-Prótesis Parcial|$200.000|3 - 4|1-4 unidades
-Acker acrílico|$110.000|1 - 2
-Acker flexible|$200.000|1 - 2
-Prótesis total inmediata|$230.000|2 - 3
-Prótesis parcial inmediata|$190.000|1 - 2
-Cubeta individual|$35.000|1 - 2
-Plato base / rodete|$35.000|1 - 2
-Enfilado convencional|$70.000|3
-Enfilado diagnóstico|$70.000|3
-Enfilado sobre barra / aditamentos|$110.000|3 - 4
-Acrilado convencional|$90.000|3
-Acrilado sobre barra (convencional)|$160.000|3 - 4
-Rebase - Reparación|$80.000|1 - 2
-Malla adicional a prótesis (prefabricada)|$45.000
-Gancho Wipla|$35.000
-Barra lingüal|$35.000`}]},
-{id:'temporales',t:'Temporales',g:[{t:'Temporales',r:`Temporal tipo Maryland|$35.000|3
-Temporal en autocurado|$25.000|2 - 3
-Temporal en termocurado|$28.000|2 - 3
-Temporal atornillado|$40.000|2 - 3
-Refuerzo metálico para temporales|$17.000|1 - 2`}]},
+{id:'acrilicos',t:'Acrílicos',g:[{t:'Prótesis Total / Parcial',r:`Prótesis total|$190.000|3 - 4
+Prótesis altoimpacto - Dientes Ivostar - Duratone|$240.000|3 - 4
+Prótesis flexible|$350.000|3 - 4
+Prótesis parcial|$160.000|3 - 4|1-4 unidades
+Acker acrílico|$80.000|2 - 3|1 unidad
+Acker flexible|$190.000|3 - 4|1 unidad
+Prótesis total inmediata|$200.000|2 - 3
+Prótesis parcial inmediata|$170.000|2 - 3|1-4 unidades
+Enfilado + acrilado + terminado de prótesis híbrida|$470.000|3 - 4
+Cubeta individual|$38.000|1 - 2
+Plato base / rodete|$25.000|1 - 2
+Rebase - Reparación|$80.000|2 - 3
+Malla adicional a prótesis (prefabricada)|$47.000
+Gancho Wipla|$37.000
+Gancho flexible|$47.000
+Barra lingüal|$45.000`}]},
+{id:'temporales',t:'Temporales',g:[{t:'Temporales',r:`Temporal tipo Maryland|$58.000|3
+Temporal en autocurado|$37.000|2 - 3
+Temporal en termocurado|$50.000|2 - 3
+Temporal atornillado|$70.000|2 - 3
+Refuerzo metálico para temporales|$25.000`}]},
 {id:'cadcam',t:'CAD CAM',g:[
-{t:'Diseño',note:'Precio base para cualquiera de los siguientes servicios.',r:`Cofias|$20.000|1 - 2
-Coronas completas|$25.000|1 - 2
-Carillas|$25.000|1 - 2`},
-{t:'PMMA',r:`Provisionales en PMMA multicapa CAD/CAM|$65.000|3 - 4
-Provisionales en PMMA monocapa CAD/CAM|$65.000|3 - 4`},
-{t:'Zirconio',r:`Cofia en zirconio|$130.000|4 - 5
-Corona en zirconio monolítico|$250.000|4 - 5
-Corona en zirconio con cutback|$280.000|4 - 5
-Puente Maryland en zirconio monolítico|$270.000|4 - 5
-Incrustación / Carilla en zirconio monolítico|$220.000|4 - 5`},
-{t:'Disilicato EMAX',r:`Corona en EMAX monolítico|$250.000|4 - 5
-Corona en EMAX con cutback|$270.000|4 - 5
-Carilla / Incrustación en EMAX|$260.000|4 - 5
-Carilla / Incrustación en EMAX fresado|$310.000|4 - 5`},
-{t:'Metal-porcelana',r:`Corona metal-cerámica cementada sinterizada CAD/CAM|$250.000|4 - 5
-Corona metal-cerámica atornillada sinterizada CAD/CAM|$230.000|4 - 5
-Tornillos|$45.000`},
-{t:'Impresión 3D - Resina',r:`Modelo 3D hueco|$45.000|1 - 2
-Modelo 3D sólido|Según volumen|1 - 2
-Modelo tipo geller|$65.000|1 - 2
-Estructura 1-6 unidades resina de prueba|$25.000|1 - 2
-Estructura 7-14 unidades resina de prueba|$40.000|2 - 3
-Estructura 1-6 unidades resina calcinable|$35.000|1 - 2
-Estructura 7-14 unidades resina calcinable|$50.000|2 - 3
-Corona / Carilla / Cofia / Resina calcinable|$15.000|1 - 2
-Provisionales en resina CAD/CAM|$30.000|2 - 3`}]},
+{t:'PMMA',r:`Provisionales en PMMA multicapa|$90.000|3 - 4
+Provisionales en PMMA monocapa|$90.000|3 - 4`},
+{t:'Zirconio',r:`Cofia en zirconio|$170.000|4 - 5
+Corona en zirconio monolítico|$310.000|4 - 5
+Corona en zirconio con cutback|$330.000|4 - 5
+Puente Maryland en zirconio monolítico|$290.000|4 - 5
+Incrustación/carilla en zirconio monolítico|$300.000|4 - 5`},
+{t:'Disilicato EMAX',r:`Corona en EMAX monolítico|$310.000|4 - 5
+Corona en EMAX con cutback|$330.000|4 - 5
+Incrustación/carilla en EMAX|$300.000|4 - 5`},
+{t:'Metal-cerámica',r:`Corona metal-cerámica|$300.000|4 - 5
+Corona metal-cerámica atornillada|$310.000|4 - 5`},
+{t:'Impresión 3D - Resina',r:`Modelo 3D hueco|$50.000|1 - 2
+Resina de prueba|$8.000 c/u|2 - 3
+Corona/carilla/resina calcinable|$15.000 c/u|2 - 3
+Provisionales en resina|$60.000|2 - 3`}]},
 {id:'aparatologia',t:'Aparatología',g:[
-{t:'Retenedores',note:'Todos los aparatos se entregan con su estuche. Desde la recepción de los modelos: 3 días hábiles para ortopedia maxilar, 2 para ortodoncia y 1 para retenedores invisibles.',foot:'NOTA: Estos aparatos no incluyen dientes, setup o aditamentos adicionales.',r:`Retenedor arco continuo|$80.000||con cinta o sin cinta
+{t:'Retenedores',note:'Todos los aparatos se entregan con su estuche. Desde la recepción de los modelos: 4 días hábiles para ortopedia maxilar, 3 para ortodoncia y 2 para retenedores invisibles. NOTA: Estos aparatos no incluyen dientes, setup o aditamentos adicionales.',foot:'',r:`Retenedor arco continuo|$80.000||Con cinta o sin cinta
 Retenedor Hawley clásico|$76.000
 Retenedor aligner básico|$66.000
-Retenedor fijo higiénico|$57.000||alambre trenzado
+Retenedor fijo higiénico|$57.000||Alambre trenzado
 Retenedor fijo|$55.000
 Retenedor - Alineador - Essix|$70.000
 Retenedor continuo soldado a Adams|$83.000`},
@@ -65,32 +52,32 @@ Placa rígida de bruxismo en acetato|$70.000
 Placa blanda de bruxismo en latex|$70.000
 Placa o funda blanqueamiento|$70.000
 Protector deportivo|$90.000
-Placa estética|$76.000||no incluye dientes ni arco
+Placa estética|$76.000||No incluye dientes ni arco
 Placa levantadora de mordida|$75.000
 Pantalla vestibular|$80.000
 Placa SI - Silensor - Apnea del sueño|$390.000
 Placa psicofuncional|$90.000
 Férula de descarga termopolimerizada|$145.000
-Férula neuromiorelajante|$180.000||acrílico termo
+Férula neuromiorelajante|$180.000||Acrílico termo
 Guía quirúrgica|$70.000
 Personalización / Caracterización / Encías|$25.000
-Placas color|$5.000||adicional
+Placas color|$5.000||Adicional
 Jig de verificación|$50.000`},
-{t:'Aparatología fija',foot:'NOTA: Los precios no incluyen tubos, botones, cajuelas, bandas adicionales, brackets y/o dientes.',r:`Barra transpalatina|$71.000||incluye 2 bandas
-Hass|$87.000||incluye tornillo + 2 bandas
-Arco lingual con asas|$71.000||incluye 2 bandas
-Barra palatina con botón de Nance|$76.000||incluye 2 bandas
-Botón palatino de Nance|$71.000||incluye 2 bandas
-Quad Helix, Bihelix|$81.000||incluye 2 bandas
-Mantenedor de espacio|$62.000||incluye 1 banda
-Rejilla lingual|$75.000||incluye 2 bandas
-Hyrax|$118.000||incluye tornillo + 2 bandas
-Hyrax inferior|$170.000||incluye tornillo + 2 bandas
-Hyrax en abanico|$160.000||incluye tornillo + 2 bandas
-McNamara|$130.000||incluye tornillo
-Flipper|$69.000||incluye 2 bandas, no incluye dientes
-Lip bumper soldado|$74.000||incluye 2 bandas
-Péndulo|$93.000||incluye 2 bandas`},
+{t:'Aparatología fija',foot:'NOTA: Los precios no incluyen tubos, botones, cajuelas, bandas adicionales, brackets y/o dientes.',r:`Barra transpalatina|$71.000||Incluye 2 bandas
+Hass|$87.000||Incluye tornillo + 2 bandas
+Arco lingual con asas|$71.000||Incluye 2 bandas
+Barra palatina con botón de Nance|$76.000||Incluye 2 bandas
+Botón palatino de Nance|$71.000||Incluye 2 bandas
+Quad Helix, Bihelix|$81.000||Incluye 2 bandas
+Mantenedor de espacio|$62.000||Incluye 1 banda
+Rejilla lingual|$75.000||Incluye 2 bandas
+Hyrax|$118.000||Incluye tornillo + 2 bandas
+Hyrax inferior|$170.000||Incluye tornillo + 2 bandas
+Hyrax en abanico|$160.000||Incluye tornillo + 2 bandas
+McNamara|$130.000||Incluye tornillo
+Flipper|$69.000||Incluye 2 bandas, no incluye dientes
+Lip bumper soldado|$74.000||Incluye 2 bandas
+Péndulo|$93.000||Incluye 2 bandas`},
 {t:'Aparatología ortopedia',foot:'NOTA: Los precios se mantienen según diseño original. No incluyen adicionales como equiplan o tornillos.',r:`Activador de Klammt con tornillo o Coffin|$118.000
 Progenie|$106.000
 Twin block|$144.000
@@ -108,11 +95,11 @@ Prostab|$134.000
 Plano inclinado|$72.000`},
 {t:'Placas de expansión',r:`Placa de expansión con tornillo transversal o bilateral|$87.000
 Placa de expansión con tornillo unilateral|$92.000
-Placa de expansión con tornillo triple|$80.000||no incluye tornillo
+Placa de expansión con tornillo triple|$80.000||No incluye tornillo
 Placa de expansión con tornillo en abanico nacional|$105.000`}]},
-{id:'otros',t:'Otros servicios',g:[{t:'Otros servicios',r:`Encerados de diagnóstico|$20.000|3 - 4
-Montaje de cerámica rosada|$70.000|3 - 4
-Personalización de Abutment|$15.000|1 - 2`}]}
+{id:'otros',t:'Otros servicios',g:[{t:'Otros servicios',r:`Encerados de diagnóstico|$20.000 c/u
+Montaje de cerámica rosada|$30.000 c/u
+Personalización de Abutment|$80.000|1 - 2`}]}
 ];
 const norm=s=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase();
 const root=document.getElementById('catalogo'),chips=document.getElementById('chips'),q=document.getElementById('q'),vacio=document.getElementById('vacio');
