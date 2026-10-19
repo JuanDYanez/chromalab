@@ -6,7 +6,7 @@
 *{box-sizing:border-box;margin:0}
 [hidden]{display:none!important}
 img{max-width:100%}
-html{scroll-behavior:smooth;scroll-padding-top:10rem}
+html{scroll-behavior:smooth;scroll-padding-top:11.5rem}
 body{font-family:"Fira Sans",system-ui,sans-serif;font-weight:300;color:var(--text);background:var(--mist);line-height:1.5}
 :focus-visible{outline:3px solid var(--magenta);outline-offset:2px}
 .wrap{max-width:62rem;margin:0 auto;padding:0 1.1rem}
@@ -38,6 +38,7 @@ h1{font-size:clamp(2.3rem,10vw,3.4rem);font-weight:800;line-height:1.05;margin:1
 /* ---------- Barra de búsqueda y filtros (centrados en móvil) ---------- */
 .bar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:.6rem 0;border-bottom:1px solid var(--line);box-shadow:0 6px 16px rgba(90,0,88,.08)}
 .bar .wrap{display:grid;gap:.5rem}
+.q-label{font-size:1rem;font-weight:600;color:var(--violet);text-align:center;line-height:1.2}
 .row{position:relative;display:flex;align-items:center}
 .row svg{position:absolute;left:1rem;width:1.2rem;height:1.2rem;color:var(--violet);pointer-events:none}
 #q{flex:1;min-width:0;padding:.75rem 1rem .75rem 2.9rem;border:1px solid var(--line);border-radius:.6rem;background:#fff;color:var(--text);font:inherit;font-size:1rem}
@@ -69,14 +70,15 @@ li:hover{background:#fbf7fc}
 .foot .lockup{height:4rem;margin:0 auto}
 .foot h2{color:#fff;font-size:1.4rem;margin-top:1.6rem}
 .links{display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:.9rem}
-.links a{display:inline-flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;overflow-wrap:anywhere}
+.links a{display:inline-flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none;white-space:nowrap}
+.links span{font-size:clamp(.7rem,3.6vw,1rem)}
 .links a:hover span{text-decoration:underline}
 .links svg{flex:none;width:2.5rem;height:2.5rem;padding:.6rem;border-radius:50%;background:rgba(255,255,255,.14);transition:background .2s}
 .links a:hover svg{background:var(--magenta)}
 
 /* ============ Tablet y escritorio (≥ 42rem) ============ */
 @media(min-width:42rem){
-  html{scroll-padding-top:8.5rem}
+  html{scroll-padding-top:10rem}
   .hero{text-align:left;padding:3rem 0 3.5rem}
   .lockup{height:4.5rem;margin:0}
   h1{font-size:clamp(3rem,7vw,5rem);margin-top:1.2rem}
@@ -87,6 +89,7 @@ li:hover{background:#fbf7fc}
   .wa-float{padding:.9rem 1.6rem}
   .wa-float span{display:inline}
   .bar{padding:.7rem 0}
+  .q-label{text-align:left;font-size:1.05rem}
   .chips{justify-content:flex-start;gap:.4rem}
   .chips button{padding:.35rem .9rem;font-size:.92rem}
   section{padding-top:2.2rem}
