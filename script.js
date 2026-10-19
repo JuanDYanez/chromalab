@@ -121,15 +121,18 @@ root.innerHTML=D.map(c=>`<section id="${c.id}" data-cat="${c.id}"><h2>${c.t}</h2
 chips.innerHTML=[['todos','Todos'],...D.map(c=>[c.id,c.t])].map(([id,t])=>`<button type="button" data-id="${id}" aria-pressed="${id==='todos'}">${t}</button>`).join('');
 function filtrar(){
   const t=norm(q.value.trim());let total=0;
+  // Con texto en el buscador se busca en TODAS las categorías; sin texto aplica la categoría elegida
+  const activa=t?'todos':cat;
+  chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.id===activa));
   root.querySelectorAll('section').forEach(s=>{
-    const okCat=cat==='todos'||s.dataset.cat===cat;let vis=0;
+    const okCat=activa==='todos'||s.dataset.cat===activa;let vis=0;
     s.querySelectorAll('.card').forEach(card=>{
       let n=0;card.querySelectorAll('li').forEach(li=>{const ok=okCat&&li.dataset.k.includes(t);li.hidden=!ok;if(ok)n++});
       card.hidden=!n;vis+=n});
     s.hidden=!vis;total+=vis});
   vacio.hidden=total>0;
 }
-chips.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.id;chips.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));filtrar()});
+chips.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.id;q.value='';filtrar()});
 q.addEventListener('input',filtrar);
 q.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();filtrar();const f=root.querySelector('section:not([hidden])');if(f)f.scrollIntoView({behavior:'smooth'})}});
 
