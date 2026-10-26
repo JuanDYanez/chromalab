@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chromalaboratoriodental.com/sitemap.xml
