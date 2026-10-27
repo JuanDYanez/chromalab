@@ -38,3 +38,11 @@
 .lb-thumbs button[aria-current=true]{border-color:var(--magenta);opacity:1}
 .lb-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
 @media(prefers-reduced-motion:reduce){.grid li,.grid img,.grid figcaption,#lb-img{transition:none}.grid li{opacity:1;transform:none}}
+
+/* Modelo 3D */
+.tag3d{position:absolute;top:.5rem;left:.5rem;z-index:2;display:flex;align-items:center;gap:.35rem;padding:.32rem .7rem .32rem .5rem;border:1.5px solid #fff;border-radius:2rem;background:var(--violet);color:#fff;font-size:.8rem;font-weight:600;line-height:1;pointer-events:none;box-shadow:0 3px 10px rgba(11,6,32,.4)}
+.tag3d svg{width:1rem;height:1rem;flex:none}
+#lb-frame{width:100%;height:100%;border:0;border-radius:.6rem;background:#473a6d;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#lb-hint{margin-top:.35rem;font-size:.82rem;color:#ffb7f4}
+@media(max-width:41.99rem){.lb.is3d .lb-nav,.lb.is3d #lb-desc{display:none}}
+@media(min-width:42rem){.lb.is3d #lb-frame{max-width:calc(100% - 7.2rem)}}

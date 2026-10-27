@@ -1,8 +1,8 @@
 // Las fotos se leen del HTML (galeria.html): cada <li> trae miniatura, foto grande (data-full), título y descripción.
-const $=id=>document.getElementById(id),grid=$('grid'),lb=$('lb'),img=$('lb-img'),cnt=$('lb-count'),th=$('lb-thumbs'),ttl=$('lb-title'),dsc=$('lb-desc');
+const $=id=>document.getElementById(id),grid=$('grid'),lb=$('lb'),img=$('lb-img'),cnt=$('lb-count'),th=$('lb-thumbs'),ttl=$('lb-title'),dsc=$('lb-desc'),frame=$('lb-frame'),hint=$('lb-hint');
 const lis=[...grid.querySelectorAll('li')];
 const items=lis.map((li,k)=>{const b=li.querySelector('button'),i=li.querySelector('img');b.dataset.i=k;
-  return{full:b.dataset.full,thumb:i.getAttribute('src'),alt:i.alt,title:li.querySelector('strong').textContent,desc:li.querySelector('figcaption span').textContent}});
+  return{full:b.dataset.full,model:b.dataset.model||'',thumb:i.getAttribute('src'),alt:i.alt,title:li.querySelector('strong').textContent,desc:li.querySelector('figcaption span').textContent}});
 const N=items.length;let cur=0,tok=0,opener=null;
 th.innerHTML=items.map((it,k)=>`<button type="button" data-i="${k}" aria-label="Foto ${k+1}"><img src="${it.thumb}" alt="" loading="lazy"></button>`).join('');
 
@@ -16,16 +16,21 @@ document.head.appendChild(ld);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
 lis.forEach(li=>io.observe(li));
 
+// Modelo 3D: se carga en un iframe solo cuando se abre, y se descarga al cambiar de foto
+function setFrame(src){if(src){if(frame.dataset.s!==src){frame.dataset.s=src;frame.src=src}}else{frame.removeAttribute('src');delete frame.dataset.s}}
 function show(i){
-  cur=(i+N)%N;const it=items[cur],t=++tok;img.classList.add('load');
-  const p=new Image();p.onload=()=>{if(t!==tok)return;img.src=p.src;img.alt=it.alt;img.classList.remove('load')};p.src=it.full;
+  cur=(i+N)%N;const it=items[cur],t=++tok,is3=!!it.model;
+  lb.classList.toggle('is3d',is3);hint.hidden=!is3;
+  if(is3){img.hidden=true;frame.hidden=false;frame.title=it.title;setFrame(it.model)}
+  else{frame.hidden=true;setFrame('');img.hidden=false;img.classList.add('load');
+    const p=new Image();p.onload=()=>{if(t!==tok)return;img.src=p.src;img.alt=it.alt;img.classList.remove('load')};p.src=it.full}
   cnt.textContent=`${cur+1} / ${N}`;ttl.textContent=it.title;dsc.textContent=it.desc;
   [...th.children].forEach((b,k)=>b.setAttribute('aria-current',k===cur));
   th.children[cur].scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
   [cur-1,cur+1].forEach(k=>{new Image().src=items[(k+N)%N].full});
 }
 function openLb(i,el){opener=el;lb.hidden=false;document.body.style.overflow='hidden';show(i);lb.querySelector('.lb-close').focus()}
-function closeLb(){lb.hidden=true;document.body.style.overflow='';if(opener)opener.focus()}
+function closeLb(){lb.hidden=true;setFrame('');document.body.style.overflow='';if(opener)opener.focus()}
 
 grid.addEventListener('click',e=>{const b=e.target.closest('button');if(b)openLb(+b.dataset.i,b)});
 lb.addEventListener('click',e=>{
