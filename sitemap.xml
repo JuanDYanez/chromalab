@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://chromalaboratoriodental.com/</loc></url>
   <url><loc>https://chromalaboratoriodental.com/galeria.html</loc>
+    <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/modelo-3d-interactivo-pilares-implantes.webp</image:loc><image:title>Modelo 3D interactivo con pilares sobre implantes</image:title></image:image>
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/protesis-acrilica-hibrida-sobre-cuatro-implantes.webp</image:loc><image:title>Prótesis acrílica híbrida sobre cuatro implantes</image:title></image:image>
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/corona-en-zirconio.webp</image:loc><image:title>Corona en zirconio</image:title></image:image>
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/encerado-anatomico-dientes-anteriores.webp</image:loc><image:title>Encerado anatómico de dientes anteriores</image:title></image:image>
@@ -24,5 +25,7 @@
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/protesis-total-acrilica-inferior.webp</image:loc><image:title>Prótesis total acrílica inferior</image:title></image:image>
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/estructura-superior-pmma-con-encia.webp</image:loc><image:title>Estructura superior en PMMA con encía</image:title></image:image>
     <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/protesis-totales-acrilicas.webp</image:loc><image:title>Prótesis totales acrílicas</image:title></image:image>
+    <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/modelo-3d-interactivo-preparacion-diente-26.webp</image:loc><image:title>Modelo 3D interactivo de preparación dental (diente 26)</image:title></image:image>
+    <image:image><image:loc>https://chromalaboratoriodental.com/galeria/full/modelo-3d-interactivo-puente-3-a-3.webp</image:loc><image:title>Modelo 3D interactivo de puente anterior de 3 a 3</image:title></image:image>
   </url>
 </urlset>
