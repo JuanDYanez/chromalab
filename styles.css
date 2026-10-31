@@ -21,8 +21,8 @@ body{font-family:"Fira Sans",system-ui,sans-serif;font-weight:300;color:var(--te
 @keyframes heroDrift{0%{transform:translate(0,0) rotate(0) scale(1)}50%{transform:translate(6%,-4%) rotate(14deg) scale(1.15)}100%{transform:translate(-5%,5%) rotate(-10deg) scale(1.05)}}
 .hero .wrap{position:relative}
 .lockup{display:block;height:5.5rem;width:auto;margin:0 auto}
-h1{font-size:clamp(2.3rem,10vw,3.4rem);font-weight:800;line-height:1.05;margin:1.2rem 0 .6rem}
-.lema{font-size:clamp(.95rem,3.8vw,1.2rem);font-weight:300}
+h1{font-size:clamp(2.3rem,10vw,3.4rem);font-weight:800;line-height:1.05;margin:1.8rem 0 0}
+.lema{margin-top:1.1rem;font-size:clamp(.95rem,3.8vw,1.2rem);font-weight:300}
 .vals{display:flex;justify-content:center;gap:.5rem;margin-top:.35rem;font-size:clamp(.85rem,4.3vw,1.6rem);font-weight:800;letter-spacing:.03em;line-height:1.2;white-space:nowrap}
 .vals b{font-weight:800}
 .vals b:not(:last-child)::after{content:"|";margin-left:.5rem;font-weight:300;color:#e46bff}
@@ -107,7 +107,7 @@ li:hover{background:#fbf7fc}
   .top .menu{display:flex}
   .hero-banner{display:none}
   
-  h1{font-size:clamp(3rem,7vw,5rem);margin-top:1.2rem}
+  h1{font-size:clamp(3rem,7vw,5rem);margin-top:2rem}
   .lema{font-size:1.25rem}
   .vals{justify-content:flex-start;gap:1rem;font-size:1.6rem}
   .vals b:not(:last-child)::after{margin-left:1rem}
