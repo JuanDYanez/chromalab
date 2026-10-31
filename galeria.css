@@ -46,3 +46,8 @@
 #lb-hint{margin-top:.35rem;font-size:.82rem;color:#ffb7f4}
 @media(max-width:41.99rem){.lb.is3d .lb-nav,.lb.is3d #lb-desc{display:none}}
 @media(min-width:42rem){.lb.is3d #lb-frame{max-width:calc(100% - 7.2rem)}}
+#lb-frame.wait{position:absolute;inset:0;margin:auto;opacity:0;pointer-events:none}
+#lb-loading{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);display:flex;align-items:center;gap:.6rem;padding:.55rem 1rem;border-radius:2rem;background:rgba(11,6,32,.8);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.9rem;white-space:nowrap}
+#lb-loading i{width:1rem;height:1rem;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:lbspin .9s linear infinite}
+@keyframes lbspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#lb-loading i{animation:none}}

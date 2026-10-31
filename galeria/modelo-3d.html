@@ -224,10 +224,18 @@ DentalWebGL.m_Data = {"data": "BgAAAAcAAABzcGFuaXNoAAAAAAAkAAAANTIxZmFkNGUtMjRkY
 .cad-sidebar,.cad-list-camera-fov,.cad-main-button,.cad-show-hide-seperator{display:none!important}
 .cad-main-folder-button,.cad-show-hide-list{top:10px!important;left:10px!important}
 .cad-show-hide-list{width:min(262px,calc(100vw - 20px))!important;max-height:min(300px,calc(100vh - 20px))!important;background:rgba(71,58,109,.85)!important;border-radius:.5rem}
+html.chroma-wait .cad-webgl-canvas{opacity:0}
+.cad-webgl-canvas{transition:opacity .4s}
+.gui-mobile-camera-fov-bar-control-bar{display:none!important}
+.gui-menu-mobile{display:none!important}
 </style>
 <script id="chroma-custom-js">
 /* Panel "Mostrar/Ocultar" plegado al abrir; se despliega al tocarlo */
-(function(){var n=0,t=setInterval(function(){var b=document.querySelector('.cad-main-folder-button'),l=document.querySelector('.cad-show-hide-list');if(b&&l&&l.offsetHeight>60){b.click();clearInterval(t)}else if(++n>80)clearInterval(t)},250)})();
+(function(){var n=0,t=setInterval(function(){var b=document.querySelector('.cad-main-folder-button'),l=document.querySelector('.cad-show-hide-list');if(b&&l&&l.offsetHeight>60){b.click();clearInterval(t)}else if(++n>240)clearInterval(t)},250)})();
+/* Avisa a la galería cuando el modelo ya está listo (para quitar la pantalla de carga) */
+(function(){var n=0,sent=false,t=setInterval(function(){try{var si=DentalWebGL.m_SceneManager.getSceneImport();
+ if(!sent&&si.AllMeshsLoaded&&!document.documentElement.classList.contains('chroma-wait')){sent=true;clearInterval(t);setTimeout(function(){parent.postMessage('chroma-ready','*')},900)}}catch(e){}
+ if(++n>1500)clearInterval(t)},200)})();
 </script>
 </body>
 </html>
