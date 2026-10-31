@@ -228,6 +228,8 @@ html.chroma-wait .cad-webgl-canvas{opacity:0}
 .cad-webgl-canvas{transition:opacity .4s}
 .gui-mobile-camera-fov-bar-control-bar{display:none!important}
 .gui-menu-mobile{display:none!important}
+/* Pantallas angostas: deja libre la esquina izquierda para la flecha de la galería */
+@media(max-width:41.99rem){.cad-main-folder-button,.cad-show-hide-list{left:3.9rem!important}.cad-show-hide-list{width:calc(100vw - 4.4rem)!important}}
 </style>
 <script id="chroma-custom-js">
 /* Caso con fotos 2D: la foto ya no está en el archivo; aquí se oculta la capa vacía con el mismo mecanismo del visor y se reencuadra el modelo (escritorio y móvil) */
