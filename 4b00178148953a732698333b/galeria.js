@@ -6,12 +6,6 @@ const items=lis.map((li,k)=>{const b=li.querySelector('button'),i=li.querySelect
 const N=items.length;let cur=0,tok=0,opener=null;
 th.innerHTML=items.map((it,k)=>`<button type="button" data-i="${k}" aria-label="Foto ${k+1}"><img src="${it.thumb}" alt="" loading="lazy"></button>`).join('');
 
-// Datos estructurados (SEO): galería de imágenes generada a partir del HTML
-const abs=u=>new URL(u,location.href).href,ld=document.createElement('script');ld.type='application/ld+json';
-ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'ImageGallery',name:document.title,url:location.href.split('#')[0],
-  image:items.map(it=>({'@type':'ImageObject',contentUrl:abs(it.full),thumbnailUrl:abs(it.thumb),name:it.title,description:it.desc,caption:it.alt}))});
-document.head.appendChild(ld);
-
 // Aparición suave al hacer scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
 lis.forEach(li=>io.observe(li));
